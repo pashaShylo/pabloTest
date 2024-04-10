@@ -54,6 +54,18 @@ const App = () => {
     setListItems(copyTodos);
   };
 
+  const handleSubmit = async () => {
+    try {
+      await createUserResult({ userResults: listItems, userName });
+
+      enqueueSnackbar("Ваші відповіді успішно відправлені", {
+        variant: "success",
+      });
+    } catch (error) {
+      enqueueSnackbar("Введенні дані не коректні", { variant: "error" });
+    }
+  };
+
   return (
     <div
       style={{
@@ -107,21 +119,7 @@ const App = () => {
           )}
         </Droppable>
       </DragDropContext>
-      <Button
-        color="primary"
-        onClick={async () => {
-          try {
-            await createUserResult({ userResults: listItems, userName });
-
-            enqueueSnackbar("Ваші відповіді успішно відправлені", {
-              variant: "success",
-            });
-          } catch (error) {
-            enqueueSnackbar("Введенні дані не коректні", { variant: "error" });
-          }
-        }}
-        className="mt-4"
-      >
+      <Button color="primary" onClick={handleSubmit} className="mt-4">
         Відправити
       </Button>
     </div>
