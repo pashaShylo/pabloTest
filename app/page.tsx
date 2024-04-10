@@ -109,9 +109,9 @@ const App = () => {
       </DragDropContext>
       <Button
         color="primary"
-        onClick={() => {
+        onClick={async () => {
           try {
-            createUserResult({ userResults: listItems, userName });
+            await createUserResult({ userResults: listItems, userName });
 
             enqueueSnackbar("Ваші відповіді успішно відправлені", {
               variant: "success",
