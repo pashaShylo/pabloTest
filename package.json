@@ -10,7 +10,10 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@hello-pangea/dnd": "^16.6.0",
+    "@mui/material": "^6.1.7",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@nextui-org/button": "2.0.26",
     "@nextui-org/code": "2.0.24",
