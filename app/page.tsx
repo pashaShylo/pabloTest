@@ -9,6 +9,9 @@ export default function Home() {
     <div>
       <h1>Home</h1>
       <TextField
+        size="small"
+        name="search-vehicle"
+        variant="outlined"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         label="Name"
